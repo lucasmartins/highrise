@@ -48,8 +48,9 @@ describe Highrise::Base do
 
   describe "when using an oauth token" do
     it ".oauth_token= writes a bearer authorization header" do
-      Highrise::Base.oauth_token = 'OAUTH_TOKEN'
-      Highrise::Base.headers['Authorization'].should == 'Bearer OAUTH_TOKEN'
+      token = 'OAUTH_TOKEN'
+      Highrise::Base.oauth_token = token
+      Highrise::Base.headers['Authorization'].should == "Basic #{Base64.encode64(token)}"
     end
   end
 end

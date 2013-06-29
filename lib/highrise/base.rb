@@ -19,7 +19,8 @@ module Highrise
       end
 
       def oauth_token=(token)
-        headers['Authorization'] = "Bearer #{token}"
+        enc = Base64.encode64(token)
+        headers['Authorization'] = "Basic #{enc}"
       end
     end
 

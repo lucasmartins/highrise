@@ -1,2 +1,5 @@
 pkg/**
 .rvmrc
+env.bash
+doc/
+.yardoc/

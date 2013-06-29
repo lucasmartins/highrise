@@ -1,5 +1,7 @@
 module Highrise
   class Party < Base
+    include Pagination
+    include Searchable
     def self.recently_viewed
       find(:all, :from => "/parties/recently_viewed.xml")
     end

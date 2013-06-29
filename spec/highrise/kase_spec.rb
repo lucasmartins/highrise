@@ -28,4 +28,18 @@ describe Highrise::Kase do
     subject.class.should_receive(:find).with(:all,{:from=>"/kases/closed.xml",:params=>{:n=>1}}).and_return([])
     subject.class.all_closed_across_pages.should == ["things"]
   end
+
+  if http_testing?
+    it "should create a Case" do
+      parties = Highrise::Party.find_all_across_pages()
+
+      p = parties[0]
+      kase = Highrise::Kase.new(name: 'test-case',parties:[p])
+      valid = kase.valid?
+      expect(valid).to be_true
+      result = kase.save
+      expect(result).to be_true
+
+    end
+  end
 end

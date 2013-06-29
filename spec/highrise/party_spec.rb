@@ -13,4 +13,5 @@ describe Highrise::Party do
     Highrise::Party.should_receive(:find).with(:all, {:from => '/parties/deletions.xml', :params=>{:since=>"20090114174311"}}).and_return("result")
     Highrise::Party.deletions_since(time).should == "result"
   end
+
 end
