@@ -72,3 +72,6 @@ version file.
 [tapajos]: http://www.improveit.com.br/en/company/tapajos
 [list]: https://github.com/tapajos/highrise/graphs/contributors
 []
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lucasmartins/highrise/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
